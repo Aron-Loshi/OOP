@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const Person  = function (firstName, birthYear) {
+            this.firstName = firstName;
+            this.birthYear = birthYear;
+        };
+        const jonas = new Person("Jonas", 1991);
+        console.log(jonas);
+
+        console.log(Person.prototype);
+        Person.prototype.calcAge = function() {
+            console.log(2024 - this.birthYear)
+        };
+        jonas.calcAge();
+
+        const Doe = new Person ("Doe", 2000);
+        console.log(Doe);
+
+
+        // -----------------------Extra-Challenge  -> BMW  /   MERCEDES -------------------------------
+
+
+        function Car(modeli, shpejtsi){
+        this.modeli = modeli;
+        this.shpejtsi = shpejtsi;
+        }
+
+        const Bmw = new Car("BMW", 120);
+        console.log(Bmw);
+
+        const Mercedes = new Car("Mercedes", 95);
+        console.log(Mercedes);
+
+        Car.prototype.accelerate = function(){
+        console.log(10 + this.shpejtsi);
+        }
+
+        Car.prototype.brake = function(){
+        console.log(5 - this.shpejtsi);
+        }
+
+        Bmw.accelerate();
+        Bmw.brake();
+
+        Mercedes.accelerate();
+        Mercedes.brake();
+    </script>
+</body>
+</html>
